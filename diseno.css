@@ -1,0 +1,339 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5fa;
+    color: #263449;
+}
+
+.sidebar {
+    width: 245px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #172b4d;
+    color: white;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 21px;
+}
+
+.subtitulo {
+    color: #b9c7dd;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+nav {
+    margin-top: 38px;
+    display: grid;
+    gap: 10px;
+}
+
+nav a {
+    color: #e5ecf7;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 7px;
+}
+
+nav a:hover {
+    background: #29466e;
+}
+
+.usuario {
+    margin-top: auto;
+    border-top: 1px solid #425675;
+    padding-top: 20px;
+    display: grid;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.contenido {
+    margin-left: 245px;
+    padding: 32px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p, .panel > p, .encabezado-tabla p {
+    color: #778398;
+    font-size: 14px;
+}
+
+.estado-sistema {
+    background: #d9f7e7;
+    color: #167348;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.tarjeta, .panel {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #172b4d0b;
+}
+
+.tarjeta span {
+    color: #778398;
+    font-size: 14px;
+}
+
+.tarjeta h2 {
+    margin-top: 14px;
+    font-size: 30px;
+    color: #2457a7;
+}
+
+.panel {
+    margin-bottom: 25px;
+}
+
+.panel h2 {
+    font-size: 20px;
+    margin-bottom: 9px;
+}
+
+.panel > p {
+    margin-bottom: 24px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #d5dce7;
+    border-radius: 7px;
+    font-size: 14px;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #b7d0fa;
+    border-color: #3478db;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 12px 17px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-entrada {
+    background: #245fc0;
+    color: white;
+}
+
+.btn-entrada:hover {
+    background: #194b9d;
+}
+
+.btn-limpiar {
+    background: #e9edf4;
+    color: #35445c;
+}
+
+.encabezado-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.encabezado-tabla input {
+    max-width: 260px;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e8edf4;
+}
+
+th {
+    background: #f7f9fc;
+    color: #65738a;
+}
+
+.vacio {
+    text-align: center;
+    color: #778398;
+    padding: 30px;
+}
+
+.estado-dentro {
+    color: #167348;
+    font-weight: bold;
+}
+
+.estado-fuera {
+    color: #68758a;
+    font-weight: bold;
+}
+
+.btn-salida {
+    background: #fff0dc;
+    color: #92570b;
+    padding: 8px 10px;
+}
+
+footer {
+    color: #8590a1;
+    font-size: 12px;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 950px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .contenido {
+        margin-left: 190px;
+        padding: 20px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    .usuario {
+        margin-top: 20px;
+    }
+
+    .contenido {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    header, .encabezado-tabla {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    
+}
+
+
+/* Logo institucional */
+.logo-institucional {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-institucional img {
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    object-fit: contain;
+}
+
+.titulo-sistema {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.titulo-sistema h2 {
+    font-size: 19px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.titulo-sistema .subtitulo {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #d5e3ff;
+}

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Acceso Vehicular</title>
+    <link rel="stylesheet" href="diseno.css">
+</head>
+<body>
+
+    
+<aside class="sidebar">
+    <div class="logo-institucional">
+        <img src="logo.jpeg"
+             alt="Logo del Instituto Tecnológico de Iztapalapa">
+    </div>
+
+    <div class="titulo-sistema">
+        <h2>Control Vehicular</h2>
+        <p class="subtitulo">Instituto Tecnológico de Iztapalapa</p>
+    </div>
+</aside>
+
+
+    <main class="contenido">
+        <header>
+            <div>
+                <h1>Control de acceso</h1>
+                <p>Registro de entradas y salidas de vehículos</p>
+            </div>
+            <span class="estado-sistema">Sistema activo</span>
+        </header>
+
+        <section id="inicio" class="estadisticas">
+            <article class="tarjeta">
+                <span>Vehículos dentro</span>
+                <h2 id="totalDentro">0</h2>
+            </article>
+
+            <article class="tarjeta">
+                <span>Entradas registradas</span>
+                <h2 id="totalEntradas">0</h2>
+            </article>
+
+            <article class="tarjeta">
+                <span>Salidas registradas</span>
+                <h2 id="totalSalidas">0</h2>
+            </article>
+        </section>
+
+        <section id="registro" class="panel">
+            <h2>Registrar vehículo</h2>
+            <p>Ingresa los datos de la persona y del vehículo.</p>
+
+            <form id="formularioVehiculo">
+                <div class="campos">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text"
+                               placeholder="Nombre de la persona" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apPaterno">Apellido paterno</label>
+                        <input id="apPaterno" type="text"
+                               placeholder="Apellido paterno" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apMaterno">Apellido materno</label>
+                        <input id="apMaterno" type="text"
+                               placeholder="Apellido materno">
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input id="correo" type="email"
+                               placeholder="persona@correo.com" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipoVehiculo">Tipo de vehículo</label>
+                        <select id="tipoVehiculo" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Bicicleta">Bicicleta</option>
+                            <option value="Motocicleta">Motocicleta</option>
+                            <option value="Automóvil">Automóvil</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="identificador">Placa o identificador</label>
+                        <input id="identificador" type="text"
+                               placeholder="Placa o número de bicicleta"
+                               required>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" class="btn-entrada">
+                        Registrar entrada
+                    </button>
+
+                    <button type="reset" class="btn-limpiar">
+                        Limpiar formulario
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="movimientos" class="panel">
+            <div class="encabezado-tabla">
+                <div>
+                    <h2>Movimientos recientes</h2>
+                    <p>Consulta las entradas y salidas registradas.</p>
+                </div>
+
+                <input id="buscar" type="search"
+                       placeholder="Buscar por nombre o placa">
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Persona</th>
+                            <th>Vehículo</th>
+                            <th>Identificador</th>
+                            <th>Entrada</th>
+                            <th>Salida</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaMovimientos">
+                        <tr>
+                            <td colspan="7" class="vacio">
+                                No hay movimientos registrados.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            Sistema de Control Vehicular · Versión inicial
+        </footer>
+    </main>
+
+    <script src="funciones.js"></script>
+</body>
+</html>
